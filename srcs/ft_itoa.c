@@ -1,0 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/04 17:38:37 by gdamion-          #+#    #+#             */
+/*   Updated: 2018/12/04 19:17:11 by gdamion-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char    *ft_itoa(int n)
+{
+	char	*str;
+	size_t	len;
+	size_t	min;
+	int		ncpy;
+
+	ncpy = n;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	min = 0;
+	if (n < 0)
+	{
+		min = 1;
+		n = -n;
+	}
+	len = min + 2;
+	while (ncpy /= 10)
+		len++;
+	if (!(str = (char*)malloc(len)))
+		return (NULL);	
+	str[--len] = '\0';
+	while (len--)
+	{
+		str[len] = n % 10 + 48;
+		n /= 10;
+	}
+    if (min == 1)
+        str[0] = '-';
+	return (str);
+}
