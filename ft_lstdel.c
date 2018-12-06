@@ -6,7 +6,7 @@
 /*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 16:30:55 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/12/06 20:38:59 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/06 21:27:47 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	while ((*alst)->next != NULL)
+	t_list	*main;
+	t_list	*next;
+
+	main = *alst;
+	while (main != NULL)
 	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = (*alst)->next;
+		next = main->next;
+		del(main->content, main->content_size);
+		free(main);
+		main = next;
 	}
 	*alst = NULL;
 }

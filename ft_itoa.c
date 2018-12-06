@@ -6,13 +6,13 @@
 /*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 17:38:37 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/12/06 20:41:02 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/06 21:34:17 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_cnt(int n)
+static size_t	ft_cnt(int n)
 {
 	size_t i;
 
@@ -22,7 +22,7 @@ size_t		ft_cnt(int n)
 	return (i);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*str;
 	size_t	len;
