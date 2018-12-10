@@ -6,7 +6,7 @@
 /*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 14:55:12 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/12/06 20:32:07 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/10 18:37:53 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,22 @@ static size_t	ft_splitcnt(char const *s, char c)
 	return (count);
 }
 
+static char		**ft_freeall(char **str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		str[i] = NULL;
+		i++;
+	}
+	free(str);
+	str = NULL;
+	return (NULL);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	size_t	i;
@@ -40,12 +56,11 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	k;
 	char	**str;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
 	if (!(str = (char **)malloc(sizeof(char *) * ft_splitcnt(s, c) + 1)))
 		return (NULL);
 	i = 0;
-	j = 0;
 	k = 0;
 	while (s[i])
 	{
@@ -55,8 +70,9 @@ char			**ft_strsplit(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		if (i > j)
-			str[k++] = ft_strndup(s + j, i - j);
+			if (!(str[k++] = ft_strndup(s + j, i - j)))
+				return (ft_freeall(str));
 	}
-	str[k] = 0;
+	str[k] = NULL;
 	return (str);
 }

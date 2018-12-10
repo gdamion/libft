@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 13:18:56 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/11/28 14:30:20 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/10 19:50:45 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*p;
+	size_t			i;
+	unsigned char	*p;
 
 	i = 0;
 	p = s;

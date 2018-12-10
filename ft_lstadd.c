@@ -6,7 +6,7 @@
 /*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 16:58:51 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/12/06 20:17:45 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/10 19:41:03 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
+	if (!alst || !new)
+		return ;
 	new->next = *alst;
 	*alst = new;
 }

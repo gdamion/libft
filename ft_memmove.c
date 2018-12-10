@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:21:52 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/12/02 22:23:45 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/10 20:00:58 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*in;
-	char	*out;
+	size_t			i;
+	unsigned char	*in;
+	unsigned char	*out;
 
-	in = (char*)src;
-	out = (char*)dest;
+	in = (unsigned char*)src;
+	out = (unsigned char*)dest;
 	if (in < out)
 	{
 		i = n - 1;

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 15:09:47 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/11/29 16:06:59 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/10 19:55:15 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 		ft_putstr("-2147483648");

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gdamion- <gdamion-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 14:46:43 by gdamion-          #+#    #+#             */
-/*   Updated: 2018/12/02 22:18:28 by gdamion-         ###   ########.fr       */
+/*   Updated: 2018/12/10 19:55:22 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putstr(char const *s)
+void	ft_putstr(char const *s)
 {
 	int i;
 
