@@ -14,11 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	if (!as)
-		return ;
-	while (as[0] != '\0')
-	{
-		free(as[0]);
-		as[0] = NULL;
-	}
+	if (as)
+		ft_memdel((void**)as);
 }
