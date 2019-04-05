@@ -6,12 +6,12 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 11:56:59 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/25 11:06:39 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/04/05 15:50:01 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef PRINTF_H
+# define PRINTF_H
 
 # include <stdarg.h>
 # include <stdlib.h>

@@ -6,7 +6,7 @@
 #    By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/29 14:13:15 by gdamion-          #+#    #+#              #
-#    Updated: 2019/03/25 11:09:39 by gdamion-         ###   ########.fr        #
+#    Updated: 2019/04/05 15:41:02 by gdamion-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,12 @@ SRC =	ft_memset.c \
 SRC_DIR = src/
 ########################################################
 
+######################### GNL ##########################
+G_SRC = get_next_line.c
+
+G_SRC_DIR = src_gnl/
+########################################################
+
 ######################## PRINTF ########################
 P_SRC =	c_handle.c \
 		d_i_handle.c \
@@ -100,12 +106,13 @@ P_SRC =	c_handle.c \
 P_SRC_DIR = src_printf/
 ########################################################
 
-
 OBJ = $(patsubst %.c,%.o,$(SRC))
+G_OBJ = $(patsubst %.c,%.o,$(G_SRC))
 P_OBJ = $(patsubst %.c,%.o,$(P_SRC))
 
 OBJ_DIR_COMMON = obj/
 OBJ_DIR = $(OBJ_DIR_COMMON)o_libft/
+G_OBJ_DIR = $(OBJ_DIR_COMMON)o_gnl/
 P_OBJ_DIR = $(OBJ_DIR_COMMON)o_printf/
 
 HEADER_DIR = includes/
@@ -120,12 +127,16 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@gcc -c $< -o $@ -I $(HEADER_DIR)
 
+$(G_OBJ_DIR)%.o: $(G_SRC_DIR)%.c
+	@mkdir -p $(G_OBJ_DIR)
+	@gcc -c $< -o $@ -I $(HEADER_DIR)
+
 $(P_OBJ_DIR)%.o: $(P_SRC_DIR)%.c
 	@mkdir -p $(P_OBJ_DIR)
 	@gcc -c $< -o $@ -I $(HEADER_DIR)
 
-$(NAME): $(addprefix $(OBJ_DIR),$(OBJ)) $(addprefix $(P_OBJ_DIR),$(P_OBJ))
-	@ar rcs $(NAME) $(addprefix $(OBJ_DIR),$(OBJ)) $(addprefix $(P_OBJ_DIR),$(P_OBJ))
+$(NAME): $(addprefix $(OBJ_DIR),$(OBJ)) $(addprefix $(P_OBJ_DIR),$(P_OBJ)) $(addprefix $(G_OBJ_DIR),$(G_OBJ))
+	@ar rcs $(NAME) $(addprefix $(OBJ_DIR),$(OBJ)) $(addprefix $(P_OBJ_DIR),$(P_OBJ)) $(addprefix $(G_OBJ_DIR),$(G_OBJ))
 
 clean:
 	@rm -Rf $(OBJ_DIR_COMMON)
