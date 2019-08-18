@@ -1,6 +1,7 @@
 # libft
 This project is a C library for using in the future School 21's projects. \
-According to rules, only basic built-in functions are used, such as: malloc, write, read.
+According to rules, only basic built-in functions are used, such as: malloc, write, read. \
+Here you can find more detailed [description](https://github.com/gdamion/libft/blob/master/libft.en.pdf).
 - [ft_is](https://github.com/gdamion/libft/tree/master/src/ft_is): check incoming integer
 - [ft_lst](https://github.com/gdamion/libft/tree/master/src/ft_lst): for working with linked lists
 - [ft_mem](https://github.com/gdamion/libft/tree/master/src/ft_mem): memory operations
@@ -15,6 +16,6 @@ According to rules, only basic built-in functions are used, such as: malloc, wri
 - make fclean (delete object files and binary library file) 
 - make re (recompile all project)
 ## How to include into your project
-gcc -I /libft_path/includes /libft_path/libft.a ...
+gcc -I /libft_path/inc /libft_path/libft.a ...
 ## Tests
 All the code is written accoring to [Norminette rules](https://github.com/gdamion/Norminette) by School 21
