@@ -6,7 +6,7 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 12:07:43 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/08/18 16:50:01 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/08/18 19:25:59 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	g_pre;
 static int	g_zeronum;
 static int	g_n;
 
-static void	x_minflag2(unsigned long long x, int var, int numlen, char *num)
+static void	x_minflag2(unsigned long long x, int numlen, char *num)
 {
 	if (!(g_a.prec == 0 && x == 0))
 	{
@@ -58,7 +58,7 @@ void		x_minflag(unsigned long long x, int var, int numlen, char *num)
 	}
 	else
 		g_zeronum = 0;
-	x_minflag2(x, var, numlen, num);
+	x_minflag2(x, numlen, num);
 }
 
 void		x_zeroflag(unsigned long long x, int var, int numlen, char *num)

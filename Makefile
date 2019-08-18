@@ -6,7 +6,7 @@
 #    By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/29 14:13:15 by gdamion-          #+#    #+#              #
-#    Updated: 2019/08/18 17:03:14 by gdamion-         ###   ########.fr        #
+#    Updated: 2019/08/18 19:37:26 by gdamion-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -128,11 +128,9 @@ SRC_PRINTF	=	c_handle.c \
 SRC_PRINTF_D = $(addprefix ft_printf/,$(SRC_PRINTF))
 ########################################################
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror
 
 INC		=	-I ./inc
-
-DIRS	=	ft_is/ ft_lst/ ft_mem/ ft_printf/ ft_put/ ft_str/ get_next_line/ translate/
 
 SRC		=	$(SRC_IS) $(SRC_LST) $(SRC_MEM) $(SRC_PUT) \
 			$(SRC_STR) $(SRC_GNL) $(SRC_TRNSLT) $(SRC_PRINTF)
@@ -140,54 +138,20 @@ SRC		=	$(SRC_IS) $(SRC_LST) $(SRC_MEM) $(SRC_PUT) \
 SRC_D	=	$(addprefix src/,$(SRC_IS_D) $(SRC_LST_D) $(SRC_MEM_D) \
 			$(SRC_PUT_D) $(SRC_STR_D) $(SRC_GNL_D) $(SRC_TRNSLT_D) $(SRC_PRINTF_D))
 
-OBJ_D = $(addprefix obj/,$(DIRS))
-OBJ	=	$(addprefix obj/,$(SRC_IS_D:.c=.o) $(SRC_LST_D:.c=.o) $(SRC_MEM_D:.c=.o) \
-			$(SRC_PUT_D:.c=.o) $(SRC_STR_D:.c=.o) $(SRC_GNL_D:.c=.o) $(SRC_TRNSLT_D:.c=.o) $(SRC_PRINTF_D:.c=.o))
+OBJ		=	$(addprefix obj/,$(SRC:.c=.o))
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(OBJ_D):
-	@mkdir -p $(OBJ_D)
-	@printf "$(GREEN)obj/ folder is created!$(RESET)\n"
-
-obj/ft_is/%.o: src/ft_is/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-obj/ft_lst/%.o: src/ft_lst/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-obj/ft_mem/%.o: src/ft_mem/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-obj/ft_printf/%.o: src/ft_printf/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-obj/ft_put/%.o: src/ft_put/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-obj/ft_str/%.o: src/ft_str/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-obj/get_next_line/%.o: src/get_next_line/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-obj/translate/%.o: src/translate/%.c
-	@gcc -c $< -o $@ $(INC)
-	@printf "$(GREEN).$(RESET)"
-
-$(NAME): $(OBJ_D) $(OBJ)
+$(NAME): $(SRC_D)
+	@gcc $(FLAGS) -c $(SRC_D) $(INC)
+	@mkdir -p obj/
+	@echo "$(GREEN)Oblect files are created!$(RESET)"
+	@mv $(SRC:.c=.o) obj/
 	@ar rcs $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo "\n$(GREEN)$(NAME) library is created!$(RESET)"
+	@echo "$(GREEN)$(NAME) library is created!$(RESET)"
 
 clean:
 	@rm -Rf obj/
