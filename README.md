@@ -1,6 +1,7 @@
 # libft
 This project is a C library for using in the future School 21's projects. \
-According to rules, only basic built-in functions are used, such as: malloc, write, read.
+According to rules, only basic built-in functions are used, such as: malloc, write, read. \
+Here you can find more detailed [description](https://github.com/gdamion/get_next_line/blob/master/get_next_line.en.pdf).
 - [ft_is](https://github.com/gdamion/libft/tree/master/src/ft_is): check incoming integer
 - [ft_lst](https://github.com/gdamion/libft/tree/master/src/ft_lst): for working with linked lists
 - [ft_mem](https://github.com/gdamion/libft/tree/master/src/ft_mem): memory operations
