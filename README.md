@@ -16,6 +16,6 @@ Here you can find more detailed [description](https://github.com/gdamion/libft/b
 - make fclean (delete object files and binary library file) 
 - make re (recompile all project)
 ## How to include into your project
-gcc -I /libft_path/includes /libft_path/libft.a ...
+gcc -I /libft_path/inc /libft_path/libft.a ...
 ## Tests
 All the code is written accoring to [Norminette rules](https://github.com/gdamion/Norminette) by School 21
