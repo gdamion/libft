@@ -1,5 +1,5 @@
 # libft
-This project is a C library for School 21's projects. \
+This project is a C library for using in the future School 21's projects. \
 According to rules, only basic built-in functions are used, such as: malloc, write, read.
 ## Scenarios of compilation
 make (compile) \
